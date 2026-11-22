@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Моравский Врабец — чешский ресторан в Челябинске</title>
+
+    <meta
+        name="description"
+        content="Моравский Врабец — чешский пивной ресторан в Челябинске. Вкус Чехии, традиционная кухня и атмосфера старой Праги."
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="header" id="header">
+
+    <div class="header__top">
+
+        <div class="container header__top-inner">
+
+            <div class="location">
+                <span class="location__label">Челябинск</span>
+                <span class="location__address">ул. Коммуны, 60</span>
+            </div>
+
+        <a class="logo" href="#top" aria-label="Моравский Врабец">
+            <img
+            class="logo__image"
+            src="images/headerlogo.png"
+            alt="Моравский Врабец"
+             >
+
+            <span class="logo__text">
+            <span>Моравский</span>
+            <strong>ВРАБЕЦ</strong>
+            </span>
+            </a>
+
+            <div class="header__contacts">
+
+                <a href="tel:+73512659383">
+                    (351) 265-93-83
+                </a>
+
+                <a href="tel:+79507227596">
+                    8 (950) 722-75-96
+                </a>
+
+                <span class="working-hours">
+                    Пн–Сб · 12:00–00:00
+                </span>
+
+            </div>
+
+            <button
+                class="menu-button"
+                id="menuButton"
+                aria-label="Открыть меню"
+                aria-expanded="false"
+            >
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- NAVIGATION -->
+
+    <nav class="nav" id="mainNav">
+
+        <div class="container nav__inner">
+
+            <div class="nav__group">
+
+                <a href="#restaurant" class="nav__link nav__link--active">
+                    О ресторане
+                </a>
+
+                <a href="#" class="nav__link">
+                    Правила посещения
+                </a>
+
+                <a href="#" class="nav__link">
+                    Отзывы гостей
+                </a>
+
+                <a href="#" class="nav__link">
+                    Фуршетное меню
+                </a>
+
+            </div>
+
+
+            <div class="nav__group nav__group--menu">
+
+                <button class="nav__link nav__dropdown">
+                    Меню
+                    <span>⌄</span>
+                </button>
+
+                <div class="dropdown">
+
+                    <a href="#">Для начала</a>
+                    <a href="#">Колбаски</a>
+                    <a href="#">Закуски к пиву</a>
+                    <a href="#">Салаты</a>
+                    <a href="#">Супы</a>
+                    <a href="#">Блюда из рыбы</a>
+                    <a href="#">Блюда из птицы</a>
+                    <a href="#">Блюда из свинины</a>
+                    <a href="#">Гарниры</a>
+                    <a href="#">Блюда из говядины</a>
+                    <a href="#">Десерты</a>
+                    <a href="#">Детское меню</a>
+                    <a href="#">Осеннее меню</a>
+
+                </div>
+
+            </div>
+
+
+            <div class="nav__group">
+
+                <a href="#" class="nav__link">
+                    Банкетное меню
+                </a>
+
+                <a href="#" class="nav__link">
+                    Меню бара
+                </a>
+
+                <a href="#" class="nav__link">
+                    Деловой обед
+                </a>
+
+                <a href="#" class="nav__link">
+                    Банкеты
+                </a>
+
+                <a href="#" class="nav__link">
+                    Новости и акции
+                </a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+
+<main id="top">
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+    <div class="hero__image">
+
+        <!--
+            Замените на фотографию ресторана.
+            Например:
+            images/hero.jpg
+        -->
+
+        <img
+            src="images/hero.png"
+            alt="Интерьер ресторана Моравский Врабец"
+        >
+
+    </div>
+
+
+    <div class="hero__overlay"></div>
+
+
+    <div class="container hero__content">
+
+        <div class="hero__content">
+
+    <div class="hero__logo">
+        <img
+            src="images/logo.png"
+            alt="Моравский Врабец"
+        >
+    </div>
+
+    <div class="hero__eyebrow">
+        Чешский ресторан · Челябинск
+    </div>
+
+    <p class="hero__subtitle">
+        Традиции старой Праги<br>
+        в сердце Челябинска
+    </p>
+
+    <a href="#restaurant" class="hero__scroll">
+        <span>Узнать больше</span>
+        <i></i>
+    </a>
+
+</div>
+    </div>
+
+
+    <div class="hero__caption">
+        MORAVSKÝ VRABEC
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INTRO
+===================================================== -->
+
+<section class="intro" id="restaurant">
+
+    <div class="container intro__grid">
+
+        <div class="section-number">
+            01
+        </div>
+
+
+        <div class="intro__heading">
+
+            <div class="eyebrow">
+                О ресторане
+            </div>
+
+            <h2>
+                Вкус<br>
+                <span>Чехии</span>
+            </h2>
+
+        </div>
+
+
+        <div class="intro__text">
+
+            <p class="lead">
+                Ресторан Моравский воробей возник
+                на историческом месте.
+            </p>
+
+            <p>
+                Примерно 100 лет назад, еще до революции,
+                в этих стенах располагались цеха старейшего
+                на Урале пивоваренного завода
+                «Новая Бавария».
+            </p>
+
+            <p>
+                Во время реконструкции здесь находили
+                вековые бутылки из темного стекла,
+                медные чаны и прочие детали из прошлого.
+                Автору интерьера нового чешского пивного
+                заведения удалось сохранить некие традиции,
+                подчеркнуть тематическую преемственность,
+                дать антикварному пространству вторую жизнь.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     IMAGE / MEMORY
+===================================================== -->
+
+<section class="memory">
+
+    <div class="memory__image">
+
+        <img
+            src="images/hero.png"
+            alt="Интерьер ресторана"
+            loading="lazy"
+        >
+
+    </div>
+
+
+    <div class="memory__content">
+
+        <span class="section-number">
+            02
+        </span>
+
+        <div class="eyebrow">
+            Пространство
+        </div>
+
+        <h2>
+            Интерьер,<br>
+            <em>сотканный</em><br>
+            из воспоминаний
+        </h2>
+
+        <div class="decorative-line"></div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CUISINE
+===================================================== -->
+
+<section class="cuisine">
+
+    <div class="container cuisine__grid">
+
+        <div class="cuisine__image">
+
+            <img
+                src="images/kolbaski.jpg"
+                alt="Чешская кухня"
+                loading="lazy"
+            >
+
+            <div class="image-label">
+                Česká kuchyně
+            </div>
+
+        </div>
+
+
+        <div class="cuisine__content">
+
+            <div class="eyebrow">
+                Чешская кухня
+            </div>
+
+            <p class="cuisine__lead">
+                Любой, кто хоть раз побывал в Чехии
+                и отведал неповторимые блюда этой страны,
+                несомненно, влюбился в национальную кухню.
+            </p>
+
+            <p>
+                Сытные лакомства, которые в Праге подают
+                гигантскими порциями, теперь можно
+                дегустировать и в Челябинске.
+            </p>
+
+            <p>
+                Чешская кухня у нас представлена
+                в полном объеме: от знаменитого
+                вепрева колена до множества сортов
+                фирменных колбасок.
+            </p>
+
+            <a href="#" class="text-link">
+                Смотреть меню
+                <span>→</span>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INTERIOR STORY
+===================================================== -->
+
+<section class="story">
+
+    <div class="container story__grid">
+
+        <div class="story__text">
+
+            <div class="eyebrow">
+                Атмосфера
+            </div>
+
+            <h2>
+                Чехия,<br>
+                <em>которую хочется</em><br>
+                рассматривать
+            </h2>
+
+            <p>
+                Особым вкусом Чехии пропитан интерьер
+                заведения. Мы стремились воспроизвести
+                свои впечатления от Праги, создать особую
+                атмосферу, национальный колорит.
+            </p>
+
+            <p>
+                То, что получилось в итоге, — это большая
+                работа многих людей, которые что-то
+                вспоминали, поднимали старые туристические
+                фотографии, подпитывались энергетикой Чехии.
+            </p>
+
+            <blockquote>
+                «Мы хотели сделать другую Чехию —
+                красивую и изящную».
+            </blockquote>
+
+            <p>
+                Не было задачи повторить интерьер типичного
+                чешского ресторана, которых много,
+                с брутальным декором, рубленой мебелью,
+                закопченными каменными стенами.
+            </p>
+
+            <p>
+                Это неоклассическая Чехия,
+                спокойная и элегантная.
+            </p>
+
+        </div>
+
+
+        <div class="story__gallery">
+
+            <figure class="gallery-image gallery-image--large">
+                <img
+                    src="images/photo-wall2.jpg"
+                    alt="Интерьер Моравского Врабца"
+                    loading="lazy"
+                >
+            </figure>
+
+            
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     DECOR
+===================================================== -->
+
+<section class="decor">
+
+    <div class="container">
+
+        <div class="decor__header">
+
+            <div>
+                <span class="section-number">03</span>
+
+                <div class="eyebrow">
+                    Детали
+                </div>
+
+                <h2>
+                    «Вкусный»<br>
+                    <em>декор</em>
+                </h2>
+            </div>
+
+            <p>
+                Интерьер заведения, как и популярный
+                пенный напиток, можно назвать долгоиграющим.
+            </p>
+
+        </div>
+
+
+        <div class="decor__grid">
+
+            <figure class="decor__main">
+
+                <img
+                    src="images/zal.jpg"
+                    alt="Зал ресторана"
+                    loading="lazy"
+                >
+
+            </figure>
+
+
+            <div class="decor__copy">
+
+                <p>
+                    В ресторане два основных зала
+                    на разных этажах — «Моравия»
+                    и «Богемия».
+                </p>
+
+                <p>
+                    В верхнем предусмотрена зона с видом
+                    на атриум «Гостиного двора», это
+                    пространство ограниченно легкими
+                    деревянными перегородками.
+                </p>
+
+                <p>
+                    Также для компании гостей до 14 персон
+                    предусмотрен вип-зал.
+                </p>
+
+            </div>
+
+
+            <figure class="decor__secondary">
+
+                <img
+                    src="images/photo-wall3.jpg"
+                    alt="Детали декора ресторана"
+                    loading="lazy"
+                >
+
+            </figure>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     HERITAGE
+===================================================== -->
+
+<section class="heritage">
+
+    <div class="heritage__image">
+
+        <img
+            src="images/stena.jpg"
+            alt="Старинная кирпичная стена"
+            loading="lazy"
+        >
+
+    </div>
+
+
+    <div class="heritage__content">
+
+        <div class="eyebrow">
+            История места
+        </div>
+
+        <h2>
+            Следы<br>
+            <em>прошлого</em>
+        </h2>
+
+        <p>
+            В заведении сохранен фрагмент вековой стены
+            старого пивоваренного завода.
+            Поверхность, выполненная из кирпича
+            и грубого бута, эффектно обыграна декораторами.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     DETAILS
+===================================================== -->
+
+<section class="details">
+
+    <div class="container details__grid">
+
+        <div class="details__text">
+
+            <div class="eyebrow">
+                В деталях
+            </div>
+
+            <h2>
+                У каждой<br>
+                <em>вещи есть история</em>
+            </h2>
+
+            <p>
+                На первый взгляд обстановка лаконична.
+                Однако в декоре, который кажется простым,
+                много «вкусных» деталей ручной работы.
+            </p>
+
+            <p>
+                Это снопы высушенных цветов и полевых трав,
+                собранные нашим дизайнером и составленные
+                в букеты, шутливые глиняные фигурки воробьев,
+                каждый из которых имеет свой характер.
+            </p>
+
+            <p>
+                Стопки книг, обернутые в настоящие
+                пражские газеты и перетянутые льняным жгутом.
+            </p>
+
+        </div>
+
+
+        <div class="details__gallery">
+
+            <img
+                src="images/dekor2.jpg"
+                alt="Детали интерьера"
+                loading="lazy"
+            >
+
+            <img
+                src="images/dekor.jpg"
+                alt="Декоративные элементы"
+                loading="lazy"
+            >
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FINAL
+===================================================== -->
+
+<section class="final-story">
+
+    <div class="final-story__background">
+
+        <img
+            src="images/interior-final.jpg"
+            alt="Моравский Врабец"
+            loading="lazy"
+        >
+
+    </div>
+
+    <div class="final-story__overlay"></div>
+
+    <div class="container final-story__content">
+
+        <div class="eyebrow">
+            Моравский Врабец
+        </div>
+
+        <h2>
+            Чехия,<br>
+            которую хочется<br>
+            <em>открывать снова</em>
+        </h2>
+
+        <p>
+            Интерьер заведения, как и популярный
+            пенный напиток, можно назвать долгоиграющим.
+            Ведь рассматривать мелочи на полках
+            и открывать для себя что-то новое
+            можно бесконечно.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTACTS
+===================================================== -->
+
+<section class="contacts">
+
+    <div class="container contacts__grid">
+
+        <div>
+
+            <div class="eyebrow">
+                Мы ждём вас
+            </div>
+
+            <h2>
+                Моравский<br>
+                <em>Врабец</em>
+            </h2>
+
+        </div>
+
+
+        <div class="contacts__info">
+
+            <div class="contact-item">
+
+                <span>Адрес</span>
+
+                <strong>
+                    г. Челябинск,<br>
+                    ул. Коммуны, 60
+                </strong>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <span>Телефон</span>
+
+                <a href="tel:+73512659383">
+                    (351) 265-93-83
+                </a>
+
+                <a href="tel:+79507227596">
+                    8 (950) 722-75-96
+                </a>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <span>Режим работы</span>
+
+                <strong>
+                    Пн–Сб<br>
+                    12:00–00:00
+                </strong>
+
+                <small>
+                    Вс — выходной
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+    <div class="container footer__inner">
+
+        <div class="footer__logo">
+            
+
+            <span>
+                МОРАВСКИЙ<br>
+                <strong>ВРАБЕЦ</strong>
+            </span>
+        </div>
+
+
+        <div class="footer__links">
+
+            <a href="#restaurant">О ресторане</a>
+            <a href="#">Меню</a>
+            <a href="#">Меню бара</a>
+            <a href="#">Деловой обед</a>
+            <a href="#">Банкеты</a>
+            <a href="#">Бонусная программа</a>
+            <a href="#">Развлекательные мероприятия</a>
+
+        </div>
+
+
+        <div class="footer__copyright">
+            © MORAVSKY VRABEC
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
