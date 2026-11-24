@@ -87,7 +87,7 @@
 
     <nav class="nav" id="mainNav">
 
-        <div class="container nav__inner">
+                <div class="container nav__inner">
 
             <div class="nav__group">
 
@@ -103,10 +103,6 @@
                     Отзывы гостей
                 </a>
 
-                <a href="#" class="nav__link">
-                    Фуршетное меню
-                </a>
-
             </div>
 
 
@@ -117,21 +113,69 @@
                     <span>⌄</span>
                 </button>
 
-                <div class="dropdown">
+                                <div class="dropdown">
 
-                    <a href="#">Для начала</a>
-                    <a href="#">Колбаски</a>
-                    <a href="#">Закуски к пиву</a>
-                    <a href="#">Салаты</a>
-                    <a href="#">Супы</a>
-                    <a href="#">Блюда из рыбы</a>
-                    <a href="#">Блюда из птицы</a>
-                    <a href="#">Блюда из свинины</a>
-                    <a href="#">Гарниры</a>
-                    <a href="#">Блюда из говядины</a>
-                    <a href="#">Десерты</a>
-                    <a href="#">Детское меню</a>
-                    <a href="#">Осеннее меню</a>
+                    <!-- Блюда -->
+                    <div class="dropdown__sub">
+                        <a href="#" class="dropdown__sub-toggle">
+                            Блюда
+                            <span>›</span>
+                        </a>
+                        <div class="dropdown__sub-list">
+                            <a href="#">Для начала</a>
+                            <a href="#">Колбаски</a>
+                            <a href="#">Закуски к пиву</a>
+                            <a href="#">Салаты</a>
+                            <a href="#">Супы</a>
+                            <a href="#">Блюда из рыбы</a>
+                            <a href="#">Блюда из птицы</a>
+                            <a href="#">Блюда из свинины</a>
+                            <a href="#">Гарниры</a>
+                            <a href="#">Блюда из говядины</a>
+                            <a href="#">Десерты</a>
+                            <a href="#">Детское меню</a>
+                            <a href="#">Осеннее меню</a>
+                        </div>
+                    </div>
+
+                    <a href="#">Фуршетное меню</a>
+                    <a href="#">Банкетное меню</a>
+
+                    <!-- Меню бара -->
+                    <div class="dropdown__sub">
+                        <a href="#" class="dropdown__sub-toggle">
+                            Меню бара
+                            <span>›</span>
+                        </a>
+                        <div class="dropdown__sub-list">
+                            <a href="#">Пиво разливное</a>
+                            <a href="#">Пиво бутылочное</a>
+                            <a href="#">Вино</a>
+                            <a href="#">Специальные настойки к пиву</a>
+                            <a href="#">Коньяк и фруктово-ягодные бренди</a>
+                            <a href="#">Виски и бренди</a>
+                            <a href="#">Водка</a>
+                            <a href="#">Ром, Текила, Самбука</a>
+                            <a href="#">Вермуты, ликеры и настойки</a>
+                            <a href="#">Алкогольные коктейли</a>
+                            <a href="#">Безалкогольные напитки</a>
+                        </div>
+                    </div>
+
+                    <!-- Деловой обед -->
+                    <div class="dropdown__sub">
+                        <a href="#" class="dropdown__sub-toggle">
+                            Деловой обед
+                            <span>›</span>
+                        </a>
+                        <div class="dropdown__sub-list">
+                            <a href="#">Понедельник</a>
+                            <a href="#">Вторник</a>
+                            <a href="#">Среда</a>
+                            <a href="#">Четверг</a>
+                            <a href="#">Пятница</a>
+                        </div>
+                    </div>
 
                 </div>
 
@@ -141,23 +185,18 @@
             <div class="nav__group">
 
                 <a href="#" class="nav__link">
-                    Банкетное меню
-                </a>
-
-                <a href="#" class="nav__link">
-                    Меню бара
-                </a>
-
-                <a href="#" class="nav__link">
-                    Деловой обед
-                </a>
-
-                <a href="#" class="nav__link">
                     Банкеты
                 </a>
 
                 <a href="#" class="nav__link">
                     Новости и акции
+                </a>
+
+                <a href="#gallery" class="nav__link">
+                    Галерея
+                </a>
+                <a href="#reserve" class="nav__link">
+                    Резерв
                 </a>
 
             </div>
@@ -667,16 +706,9 @@
      FINAL
 ===================================================== -->
 
-<section class="final-story">
-
+<section class="final-story" id="reserve">
     <div class="final-story__background">
-
-        <img
-            src="images/photo-wall.jpg"
-            alt="Моравский Врабец"
-            loading="lazy"
-        >
-
+        <img src="images/photo-wall.jpg" alt="Моравский Врабец" loading="lazy">
     </div>
 
     <div class="final-story__overlay"></div>
@@ -701,8 +733,55 @@
             можно бесконечно.
         </p>
 
-    </div>
+        <!-- НОВАЯ КНОПКА -->
+        <button class="final-story__btn text-link" id="toggleReserveBtn" type="button">
+            Забронировать столик
+            <span>→</span>
+        </button>
 
+        <!-- НОВЫЙ БЛОК С ФОРМОЙ -->
+        <div class="reserve-form-wrapper" id="reserveFormWrapper">
+            <div class="reserve-form-inner">
+                <!-- Сюда вставлен контент с вашей картинки -->
+                <h3 class="reserve-title">Резерв</h3>
+                <p>Заявки на резерв мы принимаем:</p>
+                <p>по телефону +7 (950) 722-75-96,</p>
+                <p>(351) 265-93-83,</p>
+                <p>либо предлагаем заполнить специальную форму бронирования.</p>
+                
+                <h4 class="reserve-subtitle">Форма бронирования</h4>
+                
+
+                <form class="reserve-form" action="#" method="POST">
+                    
+
+                    <input type="text" class="reserve-input" placeholder="Число гостей (обязательно)" required>
+
+                    <div class="reserve-row">
+                        <input type="text" class="reserve-input" placeholder="Ваше Имя (обязательно)" required>
+                        <input type="text" class="reserve-input" placeholder="Ваша Фамилия (обязательно)" required>
+                    </div>
+
+                    <input type="tel" class="reserve-input" placeholder="Телефон (обязательно)" required>
+                    <input type="email" class="reserve-input" placeholder="Почта (обязательно)" required>
+                    <textarea class="reserve-input reserve-textarea" placeholder="Комментарий к бронированию"></textarea>
+
+                    <label class="reserve-checkbox">
+                        <input type="checkbox" name="news">
+                        <span>Хочу получать новости</span>
+                    </label>
+                    
+                    <label class="reserve-checkbox">
+                        <input type="checkbox" name="privacy" required>
+                        <span>Принимаю политику конфиденциальности (обязательно)</span>
+                    </label>
+
+                    <button type="submit" class="reserve-submit">Отправить</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
 </section>
 
 
@@ -711,72 +790,54 @@
      CONTACTS
 ===================================================== -->
 
-<section class="contacts">
-
-    <div class="container contacts__grid">
-
-        <div>
-
-            <div class="eyebrow">
-                Мы ждём вас
-            </div>
-
-            <h2>
-                Моравский<br>
-                <em>Воробей</em>
+<section class="contacts" id="contacts">
+    <div class="container contacts__grid-new">
+        
+        <!-- ЛЕВАЯ КОЛОНКА (ТЕКСТ) -->
+        <div class="contacts__info-new">
+            <h2 class="contacts__main-title">
+                Контакты
             </h2>
 
+            <div class="contact-block">
+                <h4>Время работы:</h4>
+                <p>Пн–Сб: 12:00–00:00<br>
+                Вс: выходной</p>
+                <p class="contact-note">Деловые обеды Пн–Пт: 12:00–16:00</p>
+            </div>
+
+            <div class="contact-block">
+                <h4>Адрес:</h4>
+                <p>г. Челябинск,<br>ул. Коммуны, 60</p>
+            </div>
+
+            <div class="contact-block">
+                <h4>Телефон:</h4>
+                <p><a href="tel:+73512659383">(351) 265-93-83</a><br>
+                <a href="tel:+79507227596">8 (950) 722-75-96</a></p>
+            </div>
+
+            <!-- Блок с кнопками (по аналогии с фото) -->
+            <div class="contact-actions">
+                <a href="#reserve" class="contact-btn">Забронировать столик</a>
+                <a href="mailto:info@moravsky-vrabec.ru" class="contact-btn">Написать нам</a>
+            </div>
         </div>
 
-
-        <div class="contacts__info">
-
-            <div class="contact-item">
-
-                <span>Адрес</span>
-
-                <strong>
-                    г. Челябинск,<br>
-                    ул. Коммуны, 60
-                </strong>
-
+                <div class="contacts__map-side">
+            <!-- Карта -->
+            <div class="map-container">
+                <iframe 
+                    src="https://yandex.ru/map-widget/v1/?um=constructor%3Aa0e110ea09df2c31fb32439c18fa404b27fb4eb973b9c8c581aa4b8b8e67dca1&amp;source=constructor" 
+                    width="100%" 
+                    height="400" 
+                    frameborder="0" 
+                    allowfullscreen="true">
+                </iframe>
             </div>
-
-
-            <div class="contact-item">
-
-                <span>Телефон</span>
-
-                <a href="tel:+73512659383">
-                    (351) 265-93-83
-                </a>
-
-                <a href="tel:+79507227596">
-                    8 (950) 722-75-96
-                </a>
-
-            </div>
-
-
-            <div class="contact-item">
-
-                <span>Режим работы</span>
-
-                <strong>
-                    Пн–Сб<br>
-                    12:00–00:00
-                </strong>
-
-                <small>
-                    Вс — выходной
-                </small>
-
-            </div>
-
         </div>
 
     </div>
-
 </section>
 
 </main>

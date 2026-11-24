@@ -2976,3 +2976,533 @@ main {
 .intro__text .lead {
     font-size: 25px !important;
 }
+
+/* =========================================================
+   DROPDOWN: подпункт "Блюда" с раскрытием вправо
+========================================================= */
+
+.dropdown__sub {
+    position: relative;
+}
+
+/* Сам пункт "Блюда" — как обычная ссылка в списке */
+.dropdown__sub-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+    padding: 7px 0;
+
+    color: rgba(59, 36, 28, .86);
+    font-size: 11px;
+
+    cursor: pointer;
+
+    transition: color .2s ease, padding-left .2s ease;
+}
+
+.dropdown__sub-toggle span {
+    font-size: 14px;
+    line-height: 1;
+    color: var(--gold);
+    transition: transform .2s ease;
+}
+
+.dropdown__sub-toggle:hover {
+    padding-left: 5px;
+    color: var(--burgundy);
+}
+
+.dropdown__sub-toggle:hover span {
+    transform: translateX(2px);
+}
+
+/* Выпадающий список категорий — появляется справа */
+.dropdown__sub-list {
+    position: absolute;
+
+    top: -16px;
+    left: 100%;
+    margin-left: 1px;
+
+    width: 220px;
+
+    padding: 16px 20px;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+
+    background: var(--cream-light);
+    border: 1px solid var(--line);
+    box-shadow: 0 18px 40px rgba(43, 26, 21, .12);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(6px);
+
+    transition:
+        opacity .22s ease,
+        visibility .22s ease,
+        transform .22s ease;
+
+    z-index: 30;
+}
+
+/* Раскрытие при наведении на "Блюда" */
+.dropdown__sub:hover .dropdown__sub-list {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+/* Ссылки внутри подсписка — как в основном dropdown */
+.dropdown__sub-list a {
+    padding: 7px 0;
+
+    color: rgba(59, 36, 28, .86);
+    font-size: 11px;
+
+    transition: color .2s ease, padding-left .2s ease;
+}
+
+.dropdown__sub-list a:hover {
+    padding-left: 5px;
+    color: var(--burgundy);
+}
+
+/* Мобильная версия: подменю раскрывается вниз, статично */
+@media (max-width: 800px) {
+
+    .dropdown__sub-list {
+        position: static;
+
+        width: 100%;
+        margin: 0;
+        padding: 6px 0 6px 15px;
+
+        display: none;
+
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+
+        background: rgba(74, 44, 33, .035);
+        border: 0;
+        box-shadow: none;
+    }
+
+    /* На мобильных "Блюда" показываем подсписок по тапу/ховеру */
+    .dropdown__sub:hover .dropdown__sub-list,
+    .dropdown__sub:focus-within .dropdown__sub-list {
+        display: grid;
+    }
+
+    .dropdown__sub-toggle span {
+        transform: rotate(90deg);
+    }
+}
+
+/* =========================================================
+   FINAL STORY: Кнопка и форма бронирования
+========================================================= */
+
+/* Кнопка (стилизуем как text-link из блока кухни) */
+.final-story__btn {
+    margin: 30px auto 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    justify-content: center;
+    color: var(--cream-light); /* На темном фоне кнопка должна быть светлой */
+}
+
+.final-story__btn:hover {
+    color: var(--gold-light);
+}
+
+.final-story__btn.is-active span {
+    transform: rotate(90deg); /* Поворачиваем стрелку при открытии */
+}
+
+/* Контейнер для анимации (синус + выезд вниз) */
+.reserve-form-wrapper {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease, margin-top 0.4s ease;
+    opacity: 0;
+    margin-top: 0;
+}
+
+.reserve-form-wrapper.is-open {
+    grid-template-rows: 1fr;
+    opacity: 1;
+    margin-top: 40px;
+}
+
+/* Внутренний контейнер (чтобы grid-rows работал корректно) */
+.reserve-form-inner {
+    overflow: hidden;
+    background: #3C2C23; /* Заданный цвет */
+    text-align: left;
+    padding: 0 30px; /* Паддинг появится при раскрытии */
+    transition: padding 0.5s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.reserve-form-wrapper.is-open .reserve-form-inner {
+    padding: 30px;
+}
+
+/* Стилизация контента формы под темный фон */
+.reserve-title {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 32px;
+    color: var(--gold-light);
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.reserve-subtitle {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 24px;
+    color: var(--gold-light);
+    margin: 25px 0 15px;
+    font-weight: 500;
+}
+
+.reserve-form-inner p,
+.reserve-form-inner ul {
+    color: rgba(250, 247, 240, 0.7);
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.reserve-form-inner ul {
+    padding-left: 20px;
+}
+
+.reserve-form-inner li {
+    margin-bottom: 5px;
+}
+
+/* Красная плашка */
+.reserve-alert {
+    display: flex;
+    gap: 15px;
+    background: #eedac0;
+    padding: 15px;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    color: #3b241c;
+}
+
+.reserve-alert-icon {
+    color: #b3261e;
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.reserve-alert-text {
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* Элементы формы */
+.reserve-form-label {
+    margin-bottom: 10px !important;
+}
+
+.reserve-radio,
+.reserve-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(250, 247, 240, 0.8);
+    font-size: 14px;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+.reserve-checkbox {
+    margin-top: 15px;
+}
+
+.reserve-radio input,
+.reserve-checkbox input {
+    accent-color: var(--gold);
+}
+
+.reserve-select,
+.reserve-input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-family: "Manrope", sans-serif;
+    font-size: 14px;
+    padding: 10px 0;
+    margin-top: 10px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.reserve-select {
+    color: rgba(250, 247, 240, 0.8);
+    background: transparent;
+    margin-bottom: 10px;
+}
+
+.reserve-select option {
+    background: #3C2C23;
+    color: #fff;
+}
+
+.reserve-input::placeholder {
+    color: rgba(250, 247, 240, 0.4);
+}
+
+.reserve-input:focus,
+.reserve-select:focus {
+    border-bottom-color: var(--gold);
+}
+
+.reserve-row {
+    display: flex;
+    gap: 20px;
+}
+
+.reserve-row .reserve-input {
+    flex: 1;
+}
+
+.reserve-textarea {
+    resize: vertical;
+    min-height: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    margin-top: 15px;
+}
+
+/* Кнопка отправки */
+.reserve-submit {
+    background: #eedac0;
+    color: #3b241c;
+    border: none;
+    padding: 12px 30px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: opacity 0.3s ease;
+}
+
+.reserve-submit:hover {
+    opacity: 0.8;
+}
+
+@media (max-width: 800px) {
+    .reserve-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    .reserve-form-inner {
+        padding: 20px 15px;
+    }
+}
+
+
+/* =========================================================
+   CONTACTS SECTION (ОБНОВЛЕННЫЙ БЛОК)
+========================================================= */
+
+.contacts {
+    padding: 95px 0;
+    background: var(--cream);
+}
+
+.contacts__grid-new {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr; /* Левая часть чуть уже, правая (карта) шире */
+    gap: 80px;
+    align-items: start;
+}
+
+/* === ЛЕВАЯ КОЛОНКА === */
+.contacts__main-title {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 42px;
+    color: var(--gold);
+    font-weight: 400;
+    margin-bottom: 30px;
+    line-height: 1;
+}
+
+.contact-block {
+    margin-bottom: 25px;
+}
+
+.contact-block h4 {
+    font-family: "Manrope", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: #c4a484; /* Золотисто-коричневый подтон заголовков */
+    margin: 0 0 5px 0;
+}
+
+.contact-block p {
+    font-family: "Manrope", sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #555;
+    margin: 0;
+}
+
+.contact-block a {
+    color: #555;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-block a:hover {
+    color: var(--burgundy);
+}
+
+.contact-note {
+    margin-top: 5px !important;
+    font-size: 13px !important;
+    color: #888 !important;
+}
+
+/* Кнопки внизу */
+.contact-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.contact-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #e1c699; /* Песочный цвет как на фото */
+    color: #3b241c;
+    padding: 10px 20px;
+    font-size: 12px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contact-btn:hover {
+    background: #d1b689;
+}
+
+/* === ПРАВАЯ КОЛОНКА === */
+.contacts__map-side {
+    display: flex;
+    flex-direction: column;
+}
+
+.map-container {
+    width: 100%;
+    height: 380px;
+    background: #eee;
+    margin-bottom: 25px;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: none;
+}
+
+/* Юридическая информация */
+.legal-info h4 {
+    font-family: "Manrope", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: #c4a484;
+    margin: 0 0 8px 0;
+}
+
+.legal-info p {
+    font-family: "Manrope", sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #777;
+    margin: 0 0 20px 0;
+}
+
+/* Блок с приложениями */
+.apps-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    padding-top: 15px;
+}
+
+.apps-links span {
+    font-size: 13px;
+    color: #888;
+}
+
+.apps-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.apps-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: #1a1a1a;
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: opacity 0.3s ease;
+}
+
+.apps-icons a:hover {
+    opacity: 0.8;
+}
+
+/* =========================================================
+   АДАПТИВ ДЛЯ НОВЫХ КОНТАКТОВ
+========================================================= */
+
+@media (max-width: 1000px) {
+    .contacts__grid-new {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    
+    .contact-actions {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 800px) {
+    .contacts {
+        padding: 60px 0;
+    }
+    
+    .contacts__main-title {
+        font-size: 36px;
+    }
+    
+    .map-container {
+        height: 300px;
+    }
+}

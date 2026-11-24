@@ -177,3 +177,55 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+
+
+    
+
+    /* =====================================================
+       RESERVE FORM TOGGLE & AUTO-OPEN ON ANCHOR
+    ===================================================== */
+
+    const toggleReserveBtn = document.getElementById("toggleReserveBtn");
+    const reserveFormWrapper = document.getElementById("reserveFormWrapper");
+
+    // Функция для переключения состояния формы
+    function toggleReserveForm(forceOpen = null) {
+        if (!toggleReserveBtn || !reserveFormWrapper) return;
+
+        // Если forceOpen не передан, переключаем текущее состояние
+        const isOpen = forceOpen !== null ? forceOpen : !reserveFormWrapper.classList.contains("is-open");
+
+        if (isOpen) {
+            reserveFormWrapper.classList.add("is-open");
+            toggleReserveBtn.classList.add("is-active");
+            toggleReserveBtn.childNodes[0].nodeValue = "Скрыть форму ";
+        } else {
+            reserveFormWrapper.classList.remove("is-open");
+            toggleReserveBtn.classList.remove("is-active");
+            toggleReserveBtn.childNodes[0].nodeValue = "Забронировать столик ";
+        }
+    }
+
+    // Обработчик клика по кнопке "Забронировать столик"
+    if (toggleReserveBtn) {
+        toggleReserveBtn.addEventListener("click", () => toggleReserveForm());
+    }
+
+    // Автоматическое открытие при переходе по ссылке #reserve
+    const navReserveLinks = document.querySelectorAll('a[href="#reserve"]');
+    
+    navReserveLinks.forEach(link => {
+        link.addEventListener("click", () => {
+            // Небольшая задержка, чтобы скролл успел начаться
+            setTimeout(() => {
+                toggleReserveForm(true); // Принудительно открываем
+            }, 300);
+        });
+    });
+
+    // Если страница загружается сразу с хэшем #reserve (например, перешли по прямой ссылке)
+    if (window.location.hash === "#reserve") {
+        setTimeout(() => {
+            toggleReserveForm(true);
+        }, 500);
+    }
